@@ -3,25 +3,28 @@
 [Home Base & Currency]
 Home Airport: YYZ (Toronto Pearson International Airport)
 Preferred Currency: CAD
+Travelers: 2 adults
 
 [Flight Constraints]
 Max Layovers: 1 connection maximum (direct flights strongly preferred)
 Layover Duration: Minimum 2 hours, maximum 6 hours
 Preferred Airlines: Canadian and US airlines preferred (Top choices: Air Canada, WestJet, Porter Airlines, Flair Airlines)
 Cabin Class: Economy or Premium Economy
-Flight Budget Cap: $1,200 CAD round-trip for North America/Caribbean, $1,800 CAD for Europe/International
+Flight Budget Cap (round-trip): $1,200 CAD for North America/Caribbean, $2,000 CAD for Europe/International
 Red-Eye Policy: Avoid overnight red-eye flights under 5 hours
 
 [Accommodation & Location]
 Neighborhood Style: Safe, walkable, central neighborhoods within a 10-minute walk of public transit/metro
 Hotel Rating: Minimum 4.0/5.0 guest rating, clean and quiet rooms (avoid noisy ground-floor street-facing rooms)
 Nightly Budget Cap: $250 CAD per night
+Bed: Room need to have a bed for a couple, either double, queen, or king size. Specifically avoid twin beds or sofa beds.
 
 [Daily Pacing & Itinerary Style]
 Daily Pacing: Maximum 2 major attractions per day (1 morning anchor, 1 afternoon anchor) to avoid travel burnout
 Neighborhood Grouping: Group each day's activities within the same neighborhood to minimize transit time
 Walking Target: 8,000 to 12,000 steps per day
 Food & Coffee Recommendations (Per Day):
-- Morning Coffee & Breakfast: Provide 2 options per day
+- Coffee Places: Provide 3 options per day
+- Breakfast: Provide 2 options per day
 - Lunch: Provide 2 high-protein local dining options per day
 - Dinner: Provide 2 high-protein local dining options per day
