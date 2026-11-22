@@ -5,6 +5,10 @@ Home Airport: YYZ (Toronto Pearson International Airport)
 Preferred Currency: CAD
 Travelers: 2 adults
 
+[Research Rules]
+Live Verification: Use the Tavily search tool ONCE per trip solely to verify live hotel nightly prices and guest ratings in the target area against the accommodation constraints below.
+Recommendations: Generate all attraction, coffee, breakfast, lunch, and dinner recommendations directly from your own knowledge without running Tavily searches for them.
+
 [Flight Constraints]
 Max Layovers: 1 connection maximum (direct flights strongly preferred)
 Layover Duration: Minimum 2 hours, maximum 6 hours

@@ -15,7 +15,14 @@ PREFERENCES_PATH = BASE_DIR / "data" / "preferences.txt"            # Define the
 
 
 # Initialize the MCPServer with a name
-mcp = MCPServer("TripPlanner-MCP")
+mcp = MCPServer(
+    "TripPlanner-MCP",
+    instructions=(
+        "Whenever the user asks to plan a trip, search flights, or build an itinerary, "
+        "always call read_preferences first to load their saved constraints and output format, "
+        "then use search_flights for real-time flight pricing and Tavily for hotels, attractions, coffee, and dining."
+    ),
+)
 
 
 # Define a health check tool for the MCP server
