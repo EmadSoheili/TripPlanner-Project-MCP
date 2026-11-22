@@ -10,7 +10,7 @@ Max Layovers: 1 connection maximum (direct flights strongly preferred)
 Layover Duration: Minimum 2 hours, maximum 6 hours
 Preferred Airlines: Canadian and US airlines preferred (Top choices: Air Canada, WestJet, Porter Airlines, Flair Airlines)
 Cabin Class: Economy or Premium Economy
-Flight Budget Cap (round-trip): $1,200 CAD for North America/Caribbean, $2,000 CAD for Europe/International
+Flight Budget Cap (round-trip, total for 2 adults): $1,800 CAD for North America/Caribbean, $3,000 CAD for Europe/International
 Red-Eye Policy: Avoid overnight red-eye flights under 5 hours
 
 [Accommodation & Location]
@@ -26,5 +26,9 @@ Walking Target: 8,000 to 12,000 steps per day
 Food & Coffee Recommendations (Per Day):
 - Coffee Places: Provide 3 options per day
 - Breakfast: Provide 2 options per day
-- Lunch: Provide 2 high-protein local dining options per day
-- Dinner: Provide 2 high-protein local dining options per day
+- Lunch: Provide 2 local dining options per day, 1 unique/local/traditional option, 1 high-protein/healthy option.
+- Dinner: Provide 2 local dining options per day, 1 unique/local/traditional option, 1 high-protein/healthy option.
+
+[Output Format]
+Response Structure: Provide the full, detailed day-by-day itinerary and recommendations first. 
+Then conclude every response with a concise Markdown summary table covering Flights, Hotel, Daily Neighborhoods, and Estimated Total Trip Cost in CAD.

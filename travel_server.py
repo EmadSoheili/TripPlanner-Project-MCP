@@ -46,7 +46,7 @@ def read_preferences():
     return content
 
 
-#
+# Define a tool to search for flights using the SerpApi Google Flights engine
 @mcp.tool()
 async def search_flights(
     origin: str,
@@ -57,7 +57,7 @@ async def search_flights(
     currency: str = "CAD"
 ) -> str:
     """
-    Search real-time flights via Google Flights (SerpApi) and return the top 5 cleanest flight options.
+    Search real-time flights via Google Flights (SerpApi) and return the top 5 options ranked by lowest price and shortest duration.
     
     Args:
         origin: 3-letter IATA airport code (e.g., 'YYZ')
@@ -96,6 +96,7 @@ async def search_flights(
     }
 
 
+    # Use an asynchronous HTTP client to make the request to SerpApi
     async with httpx.AsyncClient(timeout = 20.0) as client:          # Use an asynchronous HTTP client for the request
         try:
             response = await client.get("https://serpapi.com/search", params=params)          # Make the GET request to SerpApi
@@ -113,6 +114,14 @@ async def search_flights(
     # Defensive programming: Check if any flights were found in the response
     if not flights_pool:
         return f"Error: No Round-trip flights found from {origin} to {destination} for {departure_date} to {return_date}."
+
+    # Rank strictly by lowest price first, then shortest total duration as tie-breaker
+    flights_pool.sort(
+        key=lambda offer: (
+            offer.get("price", float("inf")),
+            offer.get("total_duration", float("inf"))
+        )
+    )
 
     top_flights = flights_pool[:5]          # Get the top 5 flight options
     summaries = [f"Top {len(top_flights)} Round-Trip Flight Options ({origin} -> {destination}, Depart: {departure_date}, Return: {return_date}, {adults} Adults):"]
