@@ -6,33 +6,38 @@ Preferred Currency: CAD
 Travelers: 2 adults
 
 [Research Rules]
-Live Verification: Use the Tavily search tool ONCE per trip solely to verify live hotel nightly prices and guest ratings in the target area against the accommodation constraints below.
-Recommendations: Generate all attraction, coffee, breakfast, lunch, and dinner recommendations directly from your own knowledge without running Tavily searches for them.
+Live Verification: Run 2 to 3 targeted Tavily searches specifically to verify live hotel nightly rates (including taxes/fees) and guest ratings for the exact trip dates. Pick 1 to 2 verified hotels that strictly pass all accommodation rules. Do not list unverified hotels.
+Recommendations: Generate all attraction, coffee, breakfast, lunch, and dinner recommendations from your own knowledge without running Tavily searches for them.
 
 [Flight Constraints]
 Max Layovers: 1 connection maximum (direct flights strongly preferred)
-Layover Duration: Minimum 2 hours, maximum 6 hours
+Layover Duration: Minimum 2 hours, maximum 6 hours on both outbound and return legs
 Preferred Airlines: Canadian and US airlines preferred (Top choices: Air Canada, WestJet, Porter Airlines, Flair Airlines)
 Cabin Class: Economy or Premium Economy
 Flight Budget Cap (round-trip, total for 2 adults): $1,800 CAD for North America/Caribbean, $3,000 CAD for Europe/International
 Red-Eye Policy: Avoid overnight red-eye flights under 5 hours
+Flight Presentation: Present only the valid round-trip options that pass all constraints in a comparison table (Airline, Outbound Times & Layover, Return Times & Layover, Total Price CAD). Do not list rejected flights.
 
 [Accommodation & Location]
 Neighborhood Style: Safe, walkable, central neighborhoods within a 10-minute walk of public transit/metro
 Hotel Rating: Minimum 4.0/5.0 guest rating, clean and quiet rooms (avoid noisy ground-floor street-facing rooms)
-Nightly Budget Cap: $250 CAD per night
-Bed: Room need to have a bed for a couple, either double, queen, or king size. Specifically avoid twin beds or sofa beds.
+Nightly Budget Cap: $300 CAD per night (including taxes/fees)
+Bed: Room must have a double, queen, or king bed. Strictly avoid twin beds or sofa beds.
 
 [Daily Pacing & Itinerary Style]
-Daily Pacing: Maximum 2 major attractions per day (1 morning anchor, 1 afternoon anchor) to avoid travel burnout
-Neighborhood Grouping: Group each day's activities within the same neighborhood to minimize transit time
-Walking Target: 8,000 to 12,000 steps per day
+Daily Pacing: Maximum 2 major attractions per day (1 morning anchor, 1 afternoon anchor)
+Museum and Church Limit: Maximum 2 museums and 1 church visit in the whole trip.
+Neighborhood Grouping: Group each day's activities within one neighborhood to minimize transit time
+Walking Target: 10,000 to 14,000 steps per day
 Food & Coffee Recommendations (Per Day):
-- Coffee Places: Provide 3 options per day
-- Breakfast: Provide 2 options per day
-- Lunch: Provide 2 local dining options per day, 1 unique/local/traditional option, 1 high-protein/healthy option.
-- Dinner: Provide 2 local dining options per day, 1 unique/local/traditional option, 1 high-protein/healthy option.
+- Coffee Places: 3 options per day
+- Breakfast: 2 options per day
+- Lunch: 2 options per day (1 local/traditional, 1 high-protein/healthy)
+- Dinner: 2 options per day (1 local/traditional, 1 high-protein/healthy)
 
 [Output Format]
-Response Structure: Provide the full, detailed day-by-day itinerary and recommendations first. 
-Then conclude every response with a concise Markdown summary table covering Flights, Hotel, Daily Neighborhoods, and Estimated Total Trip Cost in CAD.
+Response Structure:
+1. Flights Comparison Table (valid round-trip options only)
+2. Verified Hotel Selection (1 to 2 confirmed options with nightly rate, total stay cost, rating, transit proximity, and bed type)
+3. Detailed Day-by-Day Itinerary (align hotel nights and daily activities with actual flight arrival and departure dates/times)
+4. Final Trip Summary Table: End with a structured Markdown table with columns | Day / Category | Neighborhood / Details | Key Highlights | Estimated Cost (CAD) | covering Flights, Hotel, Each Day, and Total Estimated Trip Cost (including food, transit, and attractions).
