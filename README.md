@@ -46,12 +46,13 @@ https://github.com/user-attachments/assets/c88111ee-efa4-4d87-899d-96f504b83fb2
 ## Sample Generated Outputs
 
 ### Illustrated Travel Infographics (`gemini-3-pro-image`)
-| Primary Infographic (`paris_infographic_main.png`) | Alternate Style (`paris_infographic_alt.png`) |
-| :---: | :---: |
-| <img src="output/paris_infographic_main.png" alt="Paris Travel Infographic Main" width="420"/> | <img src="output/paris_infographic_alt.png" alt="Paris Travel Infographic Alternate" width="420"/> |
+| Paris Primary (`paris_infographic_main.png`) | Amsterdam Primary (`amsterdam_infographic_main.png`) | Paris Alternate Style (`paris_infographic_alt.png`) |
+| :---: | :---: | :---: |
+| <img src="output/paris_infographic_main.png" alt="Paris Travel Infographic Main" width="300"/> | <img src="output/amsterdam_infographic_main.png" alt="Amsterdam Travel Infographic Main" width="300"/> | <img src="output/paris_infographic_alt.png" alt="Paris Travel Infographic Alternate" width="300"/> |
 
-### Exported PDF Itinerary
-* **[View Sample Generated PDF Itinerary (`output/paris_itinerary.pdf`)](output/paris_itinerary.pdf)**
+### Exported PDF Itineraries
+* **[View Paris Sample PDF Itinerary (`output/paris_itinerary.pdf`)](output/paris_itinerary.pdf)**
+* **[View Amsterdam Sample PDF Itinerary (`output/amsterdam_itinerary.pdf`)](output/amsterdam_itinerary.pdf)**
 
 ---
 
@@ -60,17 +61,19 @@ https://github.com/user-attachments/assets/c88111ee-efa4-4d87-899d-96f504b83fb2
 ```text
 TripPlanner-Project-MCP/
 ├── data/
-│   └── preferences.txt              # Persistent travel rules, budgets, and pacing constraints
+│   └── preferences.txt                  # Persistent travel rules, budgets, and pacing constraints
 ├── output/
-│   ├── paris_itinerary.pdf          # Sample exported PDF itinerary
-│   ├── paris_infographic_main.png   # Sample Gemini 3 Pro Image poster
-│   └── paris_infographic_alt.png    # Alternate Gemini 3 Pro Image poster
-├── .env.example                     # Environment variable template
-├── .gitignore                       # Excludes .env, .venv, and future test outputs
-├── .python-version                  # Pinned Python version
-├── pyproject.toml                   # Project metadata and dependencies
-├── travel_server.py                 # Main async MCP server implementation
-└── uv.lock                          # Deterministic dependency lockfile
+│   ├── paris_itinerary.pdf              # Sample Paris exported PDF itinerary
+│   ├── paris_infographic_main.png       # Sample Paris Gemini 3 Pro Image poster
+│   ├── paris_infographic_alt.png        # Alternate Paris Gemini 3 Pro Image poster
+│   ├── amsterdam_itinerary.pdf          # Sample Amsterdam exported PDF itinerary
+│   └── amsterdam_infographic_main.png   # Sample Amsterdam Gemini 3 Pro Image poster
+├── .env.example                         # Environment variable template
+├── .gitignore                           # Excludes .env, .venv, and future test outputs
+├── .python-version                      # Pinned Python version
+├── pyproject.toml                       # Project metadata and dependencies
+├── travel_server.py                     # Main async MCP server implementation
+└── uv.lock                              # Deterministic dependency lockfile
 ```
 
 ---
