@@ -6,7 +6,7 @@ Preferred Currency: CAD
 Travelers: 2 adults
 
 [Research Rules]
-Live Verification: Run 2 to 3 targeted Tavily searches specifically to verify live hotel nightly rates (including taxes/fees) and guest ratings for the exact trip dates. Pick 1 to 2 verified hotels that strictly pass all accommodation rules. Do not list unverified hotels.
+Live Verification: Run 2 to 3 targeted Tavily searches to verify hotel nightly rates and guest ratings for the trip dates. If exact future dates do not return a live checkout quote, select the best 1 to 2 matching hotels using their published seasonal rate range (labeled as To Be Confirmed) and still proceed to save the itinerary.
 Recommendations: Generate all attraction, coffee, breakfast, lunch, and dinner recommendations from your own knowledge without running Tavily searches for them.
 
 [Flight Constraints]
@@ -27,6 +27,7 @@ Bed: Room must have a double, queen, or king bed. Strictly avoid twin beds or so
 [Daily Pacing & Itinerary Style]
 Daily Pacing: Maximum 2 major attractions per day (1 morning anchor, 1 afternoon anchor)
 Museum and Church Limit: Maximum 2 museums and 1 church visit in the whole trip.
+Must-See Priority: Always prioritize the destination's most iconic, world-famous landmarks and flagship attractions.
 Neighborhood Grouping: Group each day's activities within one neighborhood to minimize transit time
 Walking Target: 10,000 to 14,000 steps per day
 Food & Coffee Recommendations (Per Day):

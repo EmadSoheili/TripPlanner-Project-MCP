@@ -304,18 +304,22 @@ async def save_itinerary(
     )
 
     try:
-        gemini_client = genai.Client(api_key=gemini_key)
+        gemini_client = genai.Client(
+            api_key=gemini_key,
+            http_options=types.HttpOptions(timeout=60_000),  # 60,000 ms = 60s HTTP timeout
+        )
         response = await asyncio.wait_for(
             gemini_client.aio.models.generate_content(
-                model="gemini-2.5-flash-image",
+                model="gemini-3-pro-image",
                 contents=image_prompt,
                 config=types.GenerateContentConfig(
                     response_modalities=["IMAGE"],
                     image_config=types.ImageConfig(aspect_ratio="3:4"),
                 ),
             ),
-            timeout=45.0,
+            timeout=60.0,  # 60s asyncio hard cap
         )
+
         saved_png = False
         for part in response.candidates[0].content.parts:
             if part.inline_data:
@@ -324,7 +328,7 @@ async def save_itinerary(
                 break
         png_status = f"- Illustrated Gemini PNG Infographic: {png_path}" if saved_png else "- PNG Infographic: No image returned by model."
     except asyncio.TimeoutError:
-        png_status = "- PNG Infographic skipped (Gemini image generation timed out after 45s)."
+        png_status = "- PNG Infographic skipped (Gemini image generation timed out after 60s)."
     except Exception as e:
         png_status = f"- PNG Infographic failed: {str(e)}"
 
