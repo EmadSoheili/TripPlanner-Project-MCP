@@ -97,6 +97,8 @@ cp .env.example .env
 ```env
 SERPAPI_API_KEY=your_serpapi_api_key
 GEMINI_API_KEY=your_gemini_api_key
+# Optional (used in Claude Desktop's tavily-mcp server config):
+TAVILY_API_KEY=your_tavily_api_key
 ```
 
 ### 4. Register with Claude Desktop
