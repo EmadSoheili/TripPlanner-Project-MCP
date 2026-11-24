@@ -269,22 +269,36 @@ async def save_itinerary(
     stem = OUTPUT_DIR / f"{slug}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     pdf_path, png_path = stem.with_suffix(".pdf"), stem.with_name(f"{stem.name}_infographic.png")
 
-    # 1. Convert Claude's exact Markdown (with properly spaced tables) to PDF first so it is always saved
-    char_map = str.maketrans({
-        "\u2014": "-", "\u2013": "-", "\u2018": "'", "\u2019": "'",
-        "\u201c": '"', "\u201d": '"', "\u2022": "*", "\u2192": "->",
-        "\u21c4": "<->", "\u2026": "...", "\u20ac": "EUR ", "\u0153": "oe",
-    })
-    cleaned_md = re.sub(r"([^\n])\n(\|[^\n]+\|\n\|[-:| ]+\|)", r"\1\n\n\2", markdown_itinerary.translate(char_map))
-    html_body = markdown.markdown(cleaned_md, extensions=["tables"])
-    safe_html = html_body.encode("latin-1", "replace").decode("latin-1")
+    # 1. Convert Claude's exact Markdown to PDF safely
+    try:
+        char_map = str.maketrans({
+            "\u2014": "-", "\u2013": "-", "\u2018": "'", "\u2019": "'",
+            "\u201c": '"', "\u201d": '"', "\u2022": "*", "\u2192": "->",
+            "\u21c4": "<->", "\u2026": "...", "\u20ac": "EUR ", "\u0153": "oe",
+        })
+        cleaned_md = re.sub(
+            r"([^\n])\n(\|[^\n]+\|\n\|[-:| ]+\|)",
+            r"\1\n\n\2",
+            markdown_itinerary.translate(char_map),
+        ).replace("~", "approx. ")
+        html_body = markdown.markdown(cleaned_md, extensions=["tables"])
+        html_body = re.sub(
+            r"<(t[dh][^>]*)>(.*?)</t[dh]>",
+            lambda m: f"<{m.group(1)}>{re.sub(r'</?(?:strong|b|em|i)>', '', m.group(2))}</{m.group(1)[:2]}>",
+            html_body,
+            flags=re.DOTALL,
+        )
+        safe_html = html_body.encode("latin-1", "replace").decode("latin-1")
 
-    pdf = FPDF()
-    pdf.set_auto_page_break(auto=True, margin=15)
-    pdf.add_page()
-    pdf.set_font("Helvetica", size=10)
-    pdf.write_html(safe_html)
-    pdf.output(str(pdf_path))
+        pdf = FPDF()
+        pdf.set_auto_page_break(auto=True, margin=15)
+        pdf.add_page()
+        pdf.set_font("Helvetica", size=10)
+        pdf.write_html(safe_html)
+        pdf.output(str(pdf_path))
+        pdf_status = f"- PDF: {pdf_path}"
+    except Exception as e:
+        pdf_status = f"- PDF failed ({type(e).__name__}: {e})"
 
     # 2. Generate an illustrated travel infographic PNG asynchronously with a 45s timeout
     gemini_key = os.getenv("GEMINI_API_KEY")
@@ -332,7 +346,7 @@ async def save_itinerary(
     except Exception as e:
         png_status = f"- PNG Infographic failed: {str(e)}"
 
-    return f"Itinerary exported:\n- PDF: {pdf_path}\n{png_status}"
+    return f"Itinerary export results:\n{pdf_status}\n{png_status}"
 
 
 if __name__ == "__main__":
