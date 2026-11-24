@@ -12,7 +12,7 @@ import markdown                     # To convert Claude's exact Markdown output 
 from fpdf import FPDF               # To write HTML/Markdown directly to a clean PDF
 from google import genai            # To call Gemini image generation for the visual infographic
 from google.genai import types      # To configure Gemini image generation parameters
-from mcp.server.mcpserver import MCPServer          # To create a FastAPI server for the MCP (Multi-Component Platform)
+from mcp.server.mcpserver import MCPServer          # To create a Model Context Protocol (MCP) over stdio
 
 
 # Paths
