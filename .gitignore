@@ -169,5 +169,5 @@ langchain-docs/
 .chroma/
 *.sqlite3
 
-outputs/*
+output/*
 !outputs/.gitkeep
