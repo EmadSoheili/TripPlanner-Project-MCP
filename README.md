@@ -6,7 +6,9 @@ An asynchronous **Model Context Protocol (MCP)** server built with Python that t
 
 ## Live Demo
 
-<!-- DRAG AND DROP YOUR 38s DEMO VIDEO .MP4 HERE ON GITHUB.COM -->
+
+https://github.com/user-attachments/assets/c88111ee-efa4-4d87-899d-96f504b83fb2
+
 
 ---
 
